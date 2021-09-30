@@ -55,7 +55,7 @@
       </ul>
     </div>
   </div>
-  <div class="col left-div" style="height: 100vh; background-color: #fff">
+  <div class="col left-div p-5" style="height: 100vh; background-color: #fff">
     {{ $slot }}
   </div>
 

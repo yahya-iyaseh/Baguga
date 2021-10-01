@@ -66,6 +66,11 @@ class CustomerController extends Controller
     public function edit(Customer $customer)
     {
         //
+        $Customer=Customer::find($customer->id);
+        Customer::FindOrFail($customer->id);
+        $Customer=Customer::select('id','name','coming_from','address','phone','email')->find($customer->id);
+        return view('customer.edit', compact('Customer'));
+
     }
 
     /**
@@ -77,7 +82,11 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+
+        $Customer=Customer::find($customer->id);
+           $Customer->update($request->all());
+           return redirect('customer')->with('message', 'Successfully udpate Customer');
+
     }
 
     /**
@@ -89,5 +98,18 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         //
+        $Customer=Customer::find($customer->id);
+        $Customer->delete();
+        return redirect('customer')->with('message', 'Successfully delete Customer');
+    }
+
+
+
+    public function deletecustomer($customer_id)
+    {
+        //
+        $Customer=Customer::find($customer_id);
+        $Customer->delete();
+        return redirect('customer')->with('message', 'Successfully delete Customer');
     }
 }

@@ -66,6 +66,11 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         //
+        $project=Project::find($project->id);
+        Project::FindOrFail($project->id);
+        $project=Project::select('id','name', 'details', 'cost','start_date','end_date','status')->find($project->id);
+        return view('project.edit', compact('project'));
+
     }
 
     /**
@@ -78,6 +83,9 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         //
+        $project=Project::find($project->id);
+           $project->update($request->all());
+           return redirect('project')->with('message', 'Successfully udpate project');
     }
 
     /**

@@ -18,6 +18,7 @@
             <th scope="col">start_date</th>
             <th scope="col">end_date</th>
             <th scope="col">status</th>
+            <th scope="col">Edit</th>
           </tr>
         </thead>
         @foreach ($Projects as $key => $Project)
@@ -29,6 +30,7 @@
             <td>{{ $Project->start_date }}</td>
             <td>{{ $Project->end_date }}</td>
             <td>{{ $Project->status }}</td>
+            <th><a href="project/{{$Project->id}}/edit" class="btn btn-success">Edit</a></th>
           </tr>
         @endforeach
         </tbody>

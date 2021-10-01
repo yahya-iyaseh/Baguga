@@ -30,9 +30,9 @@ Route::get('/dash', function(){
     return view('dashboard');
 });
 Route::resource('/receivable', receivableController::class);
-<<<<<<< Updated upstream
 Route::resource('/receipt', ReceiptController::class);
-=======
+
 Route::resource('/project', ProjectController::class);
 Route::resource('/customer', CustomerController::class);
->>>>>>> Stashed changes
+Route::get('customer/delete/{customer_id}','App\Http\Controllers\CustomerController@deletecustomer')->name('customer.delete');
+Route::get('receivable/delete/{receivable_id}','App\Http\Controllers\receivableController@deletereceivable')->name('receivable.delete');

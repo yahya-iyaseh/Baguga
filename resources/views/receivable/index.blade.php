@@ -16,6 +16,8 @@
         <th scope="col">address</th>
         <th scope="col">phone</th>
         <th scope="col">Description</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     @foreach ($receivables as $key => $receivable)
@@ -25,6 +27,8 @@
         <td>{{ $receivable->address }}</td>
         <td>{{ $receivable->phone }}</td>
         <td>{{ $receivable->description }}</td>
+        <th><a href="receivable/{{$receivable ->id}}/edit" class="btn btn-success">Edit</a></th>
+
       </tr>
     @endforeach
     </tbody>

@@ -46,10 +46,10 @@ class receivableController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\r  $r
+     * @param  \App\Models\Receivable  $receivable
      * @return \Illuminate\Http\Response
      */
-    public function show(r $r)
+    public function show(Receivable  $receivable)
     {
         //
     }
@@ -57,33 +57,40 @@ class receivableController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\r  $r
+     * @param  \App\Models\Receivable  $receivable
      * @return \Illuminate\Http\Response
      */
-    public function edit(r $r)
+    public function edit(Receivable $receivable)
     {
         //
+
+        $receivable=Receivable::find($receivable->id);
+        Receivable::FindOrFail($receivable->id);
+        $receivable=Receivable::select('id','name','address','phone')->find($receivable->id);
+        return view('receivable.edit', compact('receivable'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\r  $r
+     * @param  \App\Models\Receivable  $receivable
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, r $r)
+    public function update(Request $request, Receivable  $receivable)
     {
-        //
+        $receivable=Receivable::find($receivable->id);
+           $receivable->update($request->all());
+           return redirect('receivable')->with('message', 'Successfully udpate receivable');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\r  $r
+     * @param  \App\Models\Receivable  $receivable
      * @return \Illuminate\Http\Response
      */
-    public function destroy(r $r)
+    public function destroy(Receivable  $receivable)
     {
         //
     }

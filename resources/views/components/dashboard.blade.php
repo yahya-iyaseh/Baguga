@@ -33,12 +33,12 @@
           </a>
         </li>
         <li class="list-group-item dash-up">
-          <a href="#" class="text-decoration-none">
+          <a href="/project" class="text-decoration-none">
             <i class="fas fa-clipboard-list ml-1 mr-4"> </i><span>Projects</span>
           </a>
         </li>
         <li class="list-group-item dash-up">
-          <a href="#" class="text-decoration-none">
+          <a href="/customer" class="text-decoration-none">
             <i class="fas fa-user-astronaut ml-1 mr-4"> </i><span>Customers</span>
           </a>
         </li>

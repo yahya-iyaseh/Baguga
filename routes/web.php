@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\receivableController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +30,9 @@ Route::get('/dash', function(){
     return view('dashboard');
 });
 Route::resource('/receivable', receivableController::class);
+<<<<<<< Updated upstream
 Route::resource('/receipt', ReceiptController::class);
+=======
+Route::resource('/project', ProjectController::class);
+Route::resource('/customer', CustomerController::class);
+>>>>>>> Stashed changes

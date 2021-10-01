@@ -2,7 +2,7 @@
 <x-navbar />
 <x-dashboard>
 
-  <form method="POST" action="{{ route('receivable.store') }}" class="form-group p-3 mt-5 pt-1">
+  <form method="POST" action="{{ route('customer.store') }}" class="form-group p-3 mt-5 pt-1">
     {{ method_field('POST') }}
     @csrf
 
@@ -16,16 +16,22 @@
     @enderror
 
 
-    <input type="text" class="form-control my-2 @error('address')
+    <input type="text" class="form-control my-2 @error('coming_from')
     is-invalid
-    @enderror" value="{{ old('address') }}" id="address" name="address" placeholder="Address">
-    @error('address')
+    @enderror" value="{{ old('coming_from') }}" id="coming_from" name="coming_from" placeholder="Coming From">
+    @error('coming_from')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
       </span>
     @enderror
-
-
+    <input type="text" class="form-control my-2 @error('address')
+    is-invalid
+    @enderror" value="{{ old('address') }}" id="address" name="address" placeholder="Address">
+    @error('coming_from')
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+    @enderror
     <input type="text" class="form-control my-2 @error('phone')
     is-invalid
     @enderror" value="{{ old('phone') }}" id="phone" name="phone" placeholder="Phone">
@@ -35,18 +41,18 @@
       </span>
     @enderror
 
-    <textarea name="description" id="description" class="form-control my-2 @error('description')
+    <textarea name="email" id="email" class="form-control my-2 @error('email')
         is-invalid
-    @enderror"rows="4" placeholder="Description">{{ old('description') }}</textarea>
-      @error('description')
+    @enderror"rows="4" placeholder="email">{{ old('email') }}</textarea>
+      @error('email')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
       </span>
     @enderror
 
     <div class="mt-3 py-3">
-      <button type="submit" class="btn btn-primary w-25">Create Receivable</button>
-      <a href="/project" class="btn btn-outline-dark w-25">Back</a>
+      <button type="submit" class="btn btn-primary w-25">Create customer</button>
+      <a href="/customer" class="btn btn-outline-dark w-25">Back</a>
     </div>
 
   </form>

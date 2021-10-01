@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\receivableController;
 
 /*
@@ -27,3 +28,4 @@ Route::get('/dash', function(){
     return view('dashboard');
 });
 Route::resource('/receivable', receivableController::class);
+Route::resource('/receipt', ReceiptController::class);

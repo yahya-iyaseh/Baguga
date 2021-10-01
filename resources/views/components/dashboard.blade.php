@@ -22,7 +22,7 @@
           </a>
         </li>
         <li class="list-group-item dash-up">
-          <a href="#" class="text-decoration-none">
+          <a href="/receipt" class="text-decoration-none">
             <i class="fas fa-receipt ml-1 mr-4"> </i><span>Receipt</span>
           </a>
         </li>

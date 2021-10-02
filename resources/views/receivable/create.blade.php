@@ -46,7 +46,7 @@
 
     <div class="mt-3 py-3">
       <button type="submit" class="btn btn-primary w-25">Create Receivable</button>
-      <a href="/receivable" class="btn btn-outline-dark w-25">Back</a>
+      <a href="/project" class="btn btn-outline-dark w-25">Back</a>
     </div>
 
   </form>

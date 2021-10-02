@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->double('cost')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->string('status')->default('Wating');
+            $table->string('status')->default('wating');
             $table->timestamps();
         });
     }

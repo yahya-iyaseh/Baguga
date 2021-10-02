@@ -14,19 +14,7 @@
         <strong>{{ $message }}</strong>
       </span>
     @enderror
-
-
-    <input type="text" class="form-control my-2 @error('address')
-    is-invalid
-    @enderror" value="{{ old('details') }}" id="details" name="details" placeholder="Details">
-    @error('details')
-      <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-      </span>
-    @enderror
-
-
-    <input type="text" class="form-control my-2 @error('cost')
+   <input type="number" step="0.01" min="0"class="form-control my-2 @error('cost')
     is-invalid
     @enderror" value="{{ old('cost') }}" id="cost" name="cost" placeholder="Cost">
     @error('cost')
@@ -35,13 +23,24 @@
       </span>
     @enderror
 
+      <select name="status" id="stusts" class="form-control">
+          <option value="Wating">Wating</option>
+          <option value="Starting">Starting</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="Delayed">Delayed</option>
+          <option value="Finished">Finished</option>
+      </select>
+
+
+
+
     <div class="row my-2">
         <div class="col-lg-2 my-auto label">
-          <label for="birth_date" class="text-secondary">Start Date</label>
+          <label for="start_date" class="text-secondary">Start Date</label>
         </div>
         <div class="col-lg-10">
 
-          <input type="date" id="start_date" value="{{ old('start_date') }}" class="form-control @error('start_date')
+          <input type="date" id="start_date" name="start_date" value="{{ old('start_date') }}" class="form-control @error('start_date')
           is-invalid
           @enderror">
           @error('start_date')
@@ -54,11 +53,11 @@
 
       <div class="row my-2">
         <div class="col-lg-2 my-auto label">
-          <label for="birth_date" class="text-secondary">End Date</label>
+          <label for="end_date" class="text-secondary">End Date</label>
         </div>
         <div class="col-lg-10">
 
-          <input type="date" id="end_date" value="{{ old('end_date') }}" class="form-control @error('end_date')
+          <input type="date" id="end_date" name="end_date" value="{{ old('end_date') }}" class="form-control @error('end_date')
           is-invalid
           @enderror">
           @error('end_date')
@@ -70,10 +69,10 @@
       </div>
 
 
-    <textarea name="status" id="status" class="form-control my-2 @error('status')
+    <textarea name="details" id="details" class="form-control my-2 @error('details')
         is-invalid
-    @enderror"rows="4" placeholder="Status">{{ old('status') }}</textarea>
-      @error('status')
+    @enderror"rows="4" placeholder="Details">{{ old('details') }}</textarea>
+      @error('details')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
       </span>

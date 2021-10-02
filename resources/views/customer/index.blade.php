@@ -17,9 +17,6 @@
         <th scope="col">address</th>
         <th scope="col">phone</th>
         <th scope="col">email</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-
       </tr>
     </thead>
     @foreach ($Customers as $key => $Customer)
@@ -30,11 +27,6 @@
         <td>{{ $Customer->address }}</td>
         <td>{{ $Customer->phone }}</td>
         <td>{{ $Customer->email }}</td>
-
-        <th><a href="customer/{{$Customer ->id}}/edit" class="btn btn-success">Edit</a></th>
-        <th><a href="{{route('customer.delete', $Customer ->id)}}" class="btn btn-danger">Delete</a></th>
-
-
       </tr>
     @endforeach
     </tbody>

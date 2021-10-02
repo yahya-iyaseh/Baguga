@@ -43,7 +43,7 @@ class CustomerController extends Controller
             'name' => 'required|max:255'
         ]);
         Customer::create($request->all());
-        return redirect('customer')->with('message', 'Successfully created project');
+        return redirect('customer')->with('message', 'Successfully created Customer');
     }
 
     /**

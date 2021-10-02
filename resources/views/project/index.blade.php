@@ -12,6 +12,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+<<<<<<< Updated upstream
             <th scope="col">name</th>
             <th scope="col">details</th>
             <th scope="col">cost</th>
@@ -19,6 +20,14 @@
             <th scope="col">end_date</th>
             <th scope="col">status</th>
             <th scope="col">Edit</th>
+=======
+            <th scope="col">Name</th>
+            <th scope="col">Details</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Start date</th>
+            <th scope="col">End date</th>
+            <th scope="col">Status</th>
+>>>>>>> Stashed changes
           </tr>
         </thead>
         @foreach ($Projects as $key => $Project)

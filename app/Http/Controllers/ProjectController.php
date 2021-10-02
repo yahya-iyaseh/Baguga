@@ -39,10 +39,11 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         //
-        $project = Request()->validate([
-            'name' => 'required|max:255'
+         Request()->validate([
+            'name' => 'required|max:255',
         ]);
-        Project::create($request->all());
+        // dd(Request()->all());
+        Project::create(Request()->all());
         return redirect('project')->with('message', 'Successfully created project');
     }
 
